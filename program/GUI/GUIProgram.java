@@ -1,6 +1,9 @@
 package program.GUI;
 
 import javax.swing.*;
+
+import program.zespol.zespol;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,14 +21,14 @@ public class GUIProgram {
         JMenuItem addTeamMemberItem = new JMenuItem("Dodaj nowego członka zespołu");
         addTeamMemberItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Kliknięto Dodaj nowego członka zespołu");
+                zespol.addTeamMember(frame);
             }
         });
 
         JMenuItem viewAllTeamMembersItem = new JMenuItem("Pokaż wszystkich członków zespołu");
         viewAllTeamMembersItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Kliknięto Pokaż wszystkich członków zespołu");
+                zespol.viewAllTeamMembers(frame);
             }
         });
 
@@ -44,7 +47,7 @@ public class GUIProgram {
         });
 
         JMenuItem runReportItem = new JMenuItem("Raport o liczbie przypisanych zadań");
-        addTeamMemberItem.addActionListener(new ActionListener() {
+        runReportItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame, "Kliknięto Raport");
             }
@@ -68,6 +71,8 @@ public class GUIProgram {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new GUIProgram().createAndShowWindow();
+
+
             }
         });
     }
